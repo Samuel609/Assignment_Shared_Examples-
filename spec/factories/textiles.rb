@@ -1,8 +1,9 @@
 FactoryBot.define do
   factory :textile do
-    name { "MyString" }
+    name { Faker::Name.name }
     price { 1.5 }
-    status { "MyString" }
-    description { "MyText" }
+    status { Faker::Lorem.word }
+    description { Faker::Lorem.sentence}
+    user 
   end
 end
