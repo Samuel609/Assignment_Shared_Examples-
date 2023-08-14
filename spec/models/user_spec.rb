@@ -1,15 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { create(:user)}
+  # subject { create(:user)}
 
-  it 'has a valid factory' do 
-    expect(create(:user)).to be_valid
-  end
+  # it 'has a valid factory' do 
+  #   expect(create(:user)).to be_valid
+  # end
 
-  it { is_expected.to(validate_presence_of(:name))}
-  it { is_expected.to(validate_presence_of(:age))}
-  it { is_expected.to(validate_presence_of(:gender))}
+  # it { is_expected.to(validate_presence_of(:name))}
+  # it { is_expected.to(validate_presence_of(:age))}
+  # it { is_expected.to(validate_presence_of(:gender))}
 
-  it { is_expected.to(have_many(:textiles))}
+  # it { is_expected.to(have_many(:textiles))
+# }
+attributes = [
+  { name: %i[presence] },
+  { age: %i[presence] },
+  { gender: %i[presence] }
+
+]
+include_examples('model_shared_spec', :user, attributes)
 end
